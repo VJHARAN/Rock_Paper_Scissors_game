@@ -21,14 +21,14 @@ function playGame(){
         if ((humanChoice=='rock'&& computerChoice=='scissors')||
             (humanChoice=='scissors'&& computerChoice=='paper')||
             (humanChoice=='paper'&& computerChoice=='rock')){
-                console.log(`round${round} winner: USER! \t ${humanChoice} beats ${computerChoice}`);
+                console.log(`Round${round} winner: USER! \t ${humanChoice} beats ${computerChoice}`);
                 humanScore+=1;
             }
         else if(humanChoice===computerChoice){
             console.log(`Round ${round} was a Tie!`);
         }
         else {
-            console.log(`round ${round} winner: COMPUTER! \t ${computerChoice} beats ${humanChoice}`);
+            console.log(`Round ${round} winner: COMPUTER! \t ${computerChoice} beats ${humanChoice}`);
             computerScore+=1;
         }                
     }    
@@ -46,6 +46,7 @@ function playGame(){
         winner='USER';
     else if (humanScore==computerScore)
         console.log("Game is a Tie!");
+        winner='NONE'
     else
         winner='COMPUTER';
     console.log(`Final Score ==> User:${humanScore}\t Computer:${computerScore}`);
