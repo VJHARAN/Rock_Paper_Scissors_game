@@ -9,6 +9,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     const userInput=prompt("Enter your choice (rock/paper/scissors) : ")
+     
     return userInput;
 }
 
@@ -19,11 +20,11 @@ function playGame(){
     function playRound(humanChoice,computerChoice,round){
         humanChoice=humanChoice.toLowerCase();
         if ((humanChoice=='rock'&& computerChoice=='scissors')||
-            (humanChoice=='scissors'&& computerChoice=='paper')||
-            (humanChoice=='paper'&& computerChoice=='rock')){
-                console.log(`round${round} winner: USER! \t ${humanChoice} beats ${computerChoice}`);
-                humanScore+=1;
-            }
+        (humanChoice=='scissors'&& computerChoice=='paper')||
+        (humanChoice=='paper'&& computerChoice=='rock')){
+            console.log(`round${round} winner: USER! \t ${humanChoice} beats ${computerChoice}`);
+            humanScore+=1;
+        }
         else if(humanChoice===computerChoice){
             console.log(`Round ${round} was a Tie!`);
         }
@@ -31,7 +32,9 @@ function playGame(){
             console.log(`round ${round} winner: COMPUTER! \t ${computerChoice} beats ${humanChoice}`);
             computerScore+=1;
         }                
-    }    
+    }
+        
+}    
 
     let humanScore=0;
     let computerScore=0;
@@ -50,7 +53,7 @@ function playGame(){
         winner='COMPUTER';
     console.log(`Final Score ==> User:${humanScore}\t Computer:${computerScore}`);
     console.log(`Winner: ${winner}`);
-}
+
 
 playGame();
 
