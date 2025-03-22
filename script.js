@@ -34,7 +34,7 @@ function playGame(){
         }                
     }
         
-}    
+    
 
     let humanScore=0;
     let computerScore=0;
@@ -55,7 +55,7 @@ function playGame(){
         winner='COMPUTER';
     console.log(`Final Score ==> User:${humanScore}\t Computer:${computerScore}`);
     console.log(`Winner: ${winner}`);
-
+    }
 
 playGame();
 
