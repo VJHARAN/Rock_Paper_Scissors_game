@@ -36,12 +36,13 @@ function playGame(){
         }   
         console.log(divText);       
         round.textContent=divText;
-        score.textContent=`Computer: ${computerScore}\n Player: ${humanScore}`   ;
+        playerScoreSpan.textContent=`Computer: ${computerScore}`;
+        computerScoreSpan.textContent=` Player: ${humanScore}`   ;
         finalResult.textContent='';
         let winner=computerScore>humanScore?"COMPUTER":"PLAYER";
         if (computerScore>=5 || humanScore>=5){
             finalResult.textContent= `Final Winner: ${winner}`;
-            round.textContent='';
+            round.textContent='< GAME OVER >';
             computerScore=humanScore=0;
         }
          
@@ -52,8 +53,9 @@ function playGame(){
 
     let humanScore=0;
     let computerScore=0;
+    const container=document.querySelector('#container');
     const btn=document.querySelectorAll('button');
-    const div=document.querySelector('div');
+    const div=document.querySelector('#subdiv');
     const round=document.createElement('p');
     const score=document.createElement('p');
     let finalResult=document.createElement('p');
@@ -68,12 +70,25 @@ function playGame(){
             
         })
     })
+    const computerScoreSpan=document.createElement('span');
+    const playerScoreSpan=document.createElement('span');
     div.appendChild(round);
     div.appendChild(score);
     div.appendChild(finalResult);
     
-    
-       
+
+    score.appendChild(computerScoreSpan);
+    score.appendChild(playerScoreSpan);
+    container.style.cssText="display:flex ; flex-direction :column;align-items:center; justify-content:center; gap:20px; height:500px; ";
+    btn.forEach((button)=>{
+        button.style.cssText="width:150px; height:50px; margin:20px; border:2px solid  #8874cc; border-style:outset; border-radius:20px; font-size:20px; font-weight:600; background:#b5abe2; color:#4f4477;";
+    });
+    div.style.cssText="text-align:center;padding:10px 10px;width:520px; height:auto; margin:20px; border:2px solid  #8874cc; border-radius:8px; font-size:20px; font-weight:600; background:#bc5090; color:#000;";
+    finalResult.style.cssText="color:white; font-weight:700; font-size:40px;"  ;
+    round.style.cssText="color:white; font-weight:800; font-size:30px;  "  ;
+     
+    document.body.style.background="#b8e0d4";
+    score.style.cssText="display:flex; align-items:center; justify-content:center; gap:30px; font-weight:900; font-size:25px;";
 }
 
 
