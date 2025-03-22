@@ -48,8 +48,9 @@ function playGame(){
     if (humanScore>computerScore)
         winner='USER';
     else if (humanScore==computerScore)
-        console.log("Game is a Tie!");
+        {console.log("Game is a Tie!");
         winner='NONE'
+        }
     else
         winner='COMPUTER';
     console.log(`Final Score ==> User:${humanScore}\t Computer:${computerScore}`);
